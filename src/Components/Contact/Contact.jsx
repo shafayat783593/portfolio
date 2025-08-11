@@ -28,7 +28,7 @@ const Contact = () => {
         {/* Left side: Contact Info */}
         <div className="flex flex-col gap-10 md:w-1/3">
           <a
-            href="https://wa.me/8801234567890"
+            href="https://wa.me/01603098634"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 text-[#25D366] hover:text-green-400 transition cursor-pointer"
@@ -38,7 +38,7 @@ const Contact = () => {
           </a>
 
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:your.sshapa17.com"
             className="flex items-center gap-4 text-[#60a5fa] hover:text-blue-400 transition cursor-pointer"
           >
             <FaEnvelope size={40} />
@@ -46,7 +46,7 @@ const Contact = () => {
           </a>
 
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/shafayat783593"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 text-gray-400 hover:text-white transition cursor-pointer"

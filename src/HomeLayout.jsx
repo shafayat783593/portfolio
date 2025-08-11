@@ -1,3 +1,4 @@
+import { Outlet } from "react-router";
 import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
 import EducationSection from "./Components/Educated/Educated";
@@ -8,19 +9,18 @@ import Navbar from "./Components/Navbar/Navbar";
 import ProjectCardPage from "./Components/Projects/ProjectCard";
 
 
-function App() {
+function HomeLayout() {
   return (
     <div className="bg-[#171d32] h-auto w-full overflow-hidden">
       <Navbar />
-      <Home />
-      <About />
+      <Outlet/>
+      
+   
       {/* <EducationSection/> */}
-      <Experience />
-      <ProjectCardPage />
-      <Contact/>
+     
       <Footer />
     </div>
   );
 }
 
-export default App;
+export default HomeLayout;

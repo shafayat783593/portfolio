@@ -1,19 +1,16 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router";
-import ProjectCardPage from "./Components/Projects/ProjectCard";
-import ProjectDetail from "./Components/projectsDetails/projectsDetails";
+import React, { StrictMode } from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './HomeLayout.jsx'
+import './index.css'
+import { RouterProvider } from 'react-router'
+import { router } from './Router/Router.jsx'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <StrictMode>
+
+    <RouterProvider router={router} />
 
 
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/projects" element={<ProjectCardPage />} />
-        <Route path="/projects/:id" element={<ProjectDetail />} />
-        {/* Add other routes as needed */}
-      </Routes>
-    </Router>
-  );
-}
+  </StrictMode>,
+)
 
-export default App;

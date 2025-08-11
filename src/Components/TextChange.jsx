@@ -9,7 +9,7 @@ const colors = [
 
 const TextChange = () => {
   const texts = [
-    "Hi, I'm Md Shafayat",
+    "Hi, I'm Md Shafayat hosan",
     "I build interactive websites",
     "I am a frontend developer",
     "Welcome to my portfolio",

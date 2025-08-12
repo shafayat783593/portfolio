@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { RiCloseLine, RiMenu2Line } from "@remixicon/react";
-import logo from "../../assets/about/shafayat logo.png";
+import logo from "../../assets/about/shafayat-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,14 +14,17 @@ const Navbar = () => {
         {/* Menu Links */}
         <ul
           className={`
-            fixed top-16 left-0 h-[calc(100vh-4rem)] w-56
-            bg-black backdrop-blur-md
-            flex flex-col items-center gap-6 px-6 pt-10
-            transition-transform duration-300 ease-in-out
-            md:static md:h-auto md:w-auto md:flex-row md:bg-transparent md:backdrop-blur-0 md:pt-0 md:px-0
-            ${isOpen ? "translate-x-0" : "-translate-x-full"}
-            md:translate-x-0
-          `}
+  fixed top-16 left-0
+  h-[calc(100vh-4rem)] w-56
+  bg-black backdrop-blur-md md:bg-none
+  flex flex-col items-center gap-6 px-6 pt-10
+  transition-transform duration-300 ease-in-out
+  md:static md:h-auto md:w-auto md:flex-row md:pt-0 md:px-0
+  ${isOpen ? "translate-x-0" : "-translate-x-full"}
+  md:translate-x-0
+  text-white
+`}
+
         >
           {["About", "Experience", "Projects", "Contact"].map((item) => (
             <li key={item}>

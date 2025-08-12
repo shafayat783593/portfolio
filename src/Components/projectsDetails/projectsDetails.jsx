@@ -60,7 +60,7 @@ const ProjectDetail = () => {
     }
 
     return (
-        <div className="text-white p-10 max-w-7xl mx-auto mt-7 bg-[#111423] rounded-xl shadow-xl">
+        <div className="text-white p-10 max-w-7xl mx-auto mt-20 bg-[#111423] rounded-xl shadow-xl">
             <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
 
             <img

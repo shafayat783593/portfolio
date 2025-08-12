@@ -52,7 +52,7 @@ const Contact = () => {
             className="flex items-center gap-4 text-gray-400 hover:text-white transition cursor-pointer"
           >
             <FaGithub size={40} />
-            <span className="text-lg font-semibold">https://github.com/shafayat783593</span>
+            <span className="text-lg font-semibold">shafayat783593</span>
           </a>
         </div>
 

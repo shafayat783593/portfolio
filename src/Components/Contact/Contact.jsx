@@ -28,13 +28,13 @@ const Contact = () => {
         {/* Left side: Contact Info */}
         <div className="flex flex-col gap-10 md:w-1/3">
           <a
-            href="https://wa.me/01603098634"
+            href="https://wa.me/01610665069"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 text-[#25D366] hover:text-green-400 transition cursor-pointer"
           >
             <FaWhatsapp size={40} />
-            <span className="text-lg font-semibold">+880 1234 567 890</span>
+            <span className="text-lg font-semibold">+880 01610665069</span>
           </a>
 
           <a
@@ -42,7 +42,7 @@ const Contact = () => {
             className="flex items-center gap-4 text-[#60a5fa] hover:text-blue-400 transition cursor-pointer"
           >
             <FaEnvelope size={40} />
-            <span className="text-lg font-semibold">your.email@example.com</span>
+            <span className="text-lg font-semibold">sshapa17@gamil.com</span>
           </a>
 
           <a
@@ -52,7 +52,7 @@ const Contact = () => {
             className="flex items-center gap-4 text-gray-400 hover:text-white transition cursor-pointer"
           >
             <FaGithub size={40} />
-            <span className="text-lg font-semibold">github.com/yourusername</span>
+            <span className="text-lg font-semibold">https://github.com/shafayat783593</span>
           </a>
         </div>
 

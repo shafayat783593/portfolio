@@ -1,35 +1,42 @@
+
 import React from "react";
 import { motion } from "framer-motion";
-import avatarImg from "../../assets/7358602-removebg-preview.png";
 import TextChange from "../TextChange";
+import myphoto from "../../assets/about/shafayat pic.jpg";
 
 const Banner = () => {
     return (
-        <div className="text-white flex w-full py-20 justify-between items-start p-10 md:p-20">
-            <div className="md:w-2/4 md:pt-10 ">
+        <div className="text-white flex flex-col md:flex-row w-full my-20 justify-between items-center p-10 md:p-20">
+            {/* Left Side */}
+            <div className="md:w-2/4 md:pt-10 text-center md:text-left">
                 <TextChange />
-                <p className="text-sm md:text-2xl tracking-tight mt-4">
+                <p className="text-sm md:text-2xl tracking-tight mt-10">
                     I am passionate about building beautiful and responsive web applications using React and Tailwind CSS.
                 </p>
-
-                <button className="mt-5 md:mt-10 text-white py-2 px-4 text-sm md:text-lg hover:opacity-85 duration-300 hover:scale-105 font-semibold rounded-3xl bg-[#465697]">
-                    Contact Me
+                <button className="mt-5 md:mt-10 text-white py-2 px-6 text-sm md:text-lg hover:opacity-85 duration-300 hover:scale-105 font-semibold rounded-3xl bg-[#465697]">
+                    Download Resume
                 </button>
             </div>
-            <div>
-                <motion.img
-                    src={avatarImg}
-                    alt="Avatar"
+
+            {/* Right Side - Circle Image */}
+            <div className="mt-10 md:mt-0 flex justify-center">
+                <motion.div
                     initial={{ y: 0 }}
-                    animate={{ y: [0, -20, 0] }}
+                    animate={{ y: [0, -15, 0] }}
                     transition={{
                         duration: 4,
                         ease: "easeInOut",
                         repeat: Infinity,
                         repeatType: "loop",
                     }}
-                    className="rounded-lg shadow-lg"
-                />
+                    className="relative w-56 h-56 md:w-72 md:h-72 rounded-full p-1 bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 shadow-lg"
+                >
+                    <img
+                        src={myphoto}
+                        alt="Avatar"
+                        className="w-full h-full object-cover rounded-full border-4 border-[#0f1629]"
+                    />
+                </motion.div>
             </div>
         </div>
     );

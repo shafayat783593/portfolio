@@ -1,17 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaReact, FaHtml5, FaNodeJs } from "react-icons/fa";
-import { SiTailwindcss, SiMongodb } from "react-icons/si";
+import { SiTailwindcss, SiMongodb, SiExpress, SiJsonwebtokens } from "react-icons/si";
 
 const Experience = () => {
+
   const skills = [
     { name: "React.js", icon: <FaReact className="text-[#61DBFB]" size={40} /> },
     { name: "HTML", icon: <FaHtml5 className="text-[#E34F26]" size={40} /> },
     { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#38BDF8]" size={40} /> },
     { name: "Node.js", icon: <FaNodeJs className="text-[#68A063]" size={40} /> },
     { name: "MongoDB", icon: <SiMongodb className="text-[#4DB33D]" size={40} /> },
+    { name: "Express.js", icon: <SiExpress className="text-[#000000]" size={40} /> },
+    { name: "JWT", icon: <SiJsonwebtokens className="text-[#d63aff]" size={40} /> },
   ];
-
   return (
     <div id = "Experience"  className="p-6 md:p-16  text-white">
       <h1 className="text-3xl md:text-5xl font-bold text-center mb-12 text-[#38bdf8]">
@@ -34,7 +36,7 @@ const Experience = () => {
           <h3 className="text-xl font-semibold mb-2">
             Diploma in Computer Technology
           </h3>
-          <p className="text-gray-400 text-sm mb-2">XYZ Polytechnic Institute</p>
+          <p className="text-gray-400 text-sm mb-2">Feni Polytechnic Institute</p>
           <p className="text-gray-500 text-sm mb-4">2023 – Present</p>
           <p className="text-gray-300 leading-relaxed">
             Currently pursuing a diploma with a focus on modern web development,

@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Left: Copyright */}
         <p className="text-sm md:text-base">
-          &copy; {new Date().getFullYear()} Your Name. All rights reserved.
+          &copy; {new Date().getFullYear()} Shafayat Hosan. All rights reserved.
         </p>
 
         {/* Center: Social Icons */}

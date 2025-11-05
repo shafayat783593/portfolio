@@ -1,117 +1,121 @@
 import React from "react";
+import { Link } from "react-router"; // এটা যোগ করো
+
 import incurancePolice from "../../assets/about/lifeincurance.png";
+import vibePassImg from "../../assets/about/vibepass.png";
 import tourmanagement from "../../assets/about/tour management.png";
-import frellancer from "../../assets/about/frellancer.png";
-import { motion } from "framer-motion";
-import { Link } from "react-router"; // Use react-router-dom for SPA routing
 
 const projects = [
   {
     id: "life-insurance",
     title: "Life Insurance Management Platform",
-    main: "Policy Management:Users can view detailed....",
+    main: "Policy Management: Users can view detailed policy info, manage beneficiaries, and track premiums.",
     imgSrc: incurancePolice,
     demoLink: "https://insurance-management-8aa90.web.app/",
     sourceLink: "https://github.com/shafayat783593/Life-Insurance-Management-Platform",
-    stack: "React, Firebase, Tailwind CSS",
-    description: "This platform is a comprehensive web application...",
-    challenges: "Designing a secure, role-based system..",
-    improvements: "Add user dashboard, add payment integration...",
+    stack: ["React", "Firebase", "Tailwind CSS"],
+  },
+  {
+    id: "vibe-pass",
+    title: "Vibe Pass – Online Movie Ticket Booking",
+    main: "Real-time seat selection, secure payments, QR e-tickets, and admin dashboard.",
+    imgSrc: vibePassImg,
+    demoLink: "https://vibe-pass.vercel.app/",
+    sourceLink: "https://github.com/niloyahmadramjan/Vibe-Pass",
+    serverLink: "https://github.com/niloyahmadramjan/vibe-pass-server",
+    stack: ["React", "Node.js", "Express", "MongoDB", "Socket.io", "Tailwind CSS"],
   },
   {
     id: "tour-management",
     title: "Tour Management",
-    main: "Tour Listings:Users can explore a wide range...",
+    main: "Tour Listings: Users can explore tours, filter by price, destination, and duration.",
     imgSrc: tourmanagement,
     demoLink: "https://tour-management-c1ca2.web.app/",
     sourceLink: "https://github.com/shafayat783593/Tout-management-clint",
-    stack: "Next.js, React, Tailwind CSS",
-    description: "Tour Management is a comprehensive web application..",
-    challenges: "Implementing dynamic data fetching with react..",
-    improvements: "Add payment integration for booking confirmation Incorporate.. ",
-  },
-  {
-    id: "freelance-task",
-    title: "Freelance Task",
-    main: "My Posted Tasks:Clients can post their freelance task...",
-    imgSrc: frellancer,
-    demoLink: "https://freelance-task-8606e.web.app/",
-    sourceLink: "https://github.com/yourusername/netflix-clone",
-    stack: "React, Styled Components, Firebase",
-    description: "Designing a flexible yet simple UI ..",
-    challenges: "Add chat or messaging functionality between..",
-    improvements: "My Posted Tasks:Clients can post their freelance...",
+    stack: ["Next.js", "React", "Tailwind CSS"],
   },
 ];
 
-const ProjectCardPage = () => {
+const ProjectSection = () => {
   return (
-    <div id="Projects" className="p-10 md:p-24 text-white min-h-screen bg-[#0b0c17]">
-      <h1 className="text-3xl md:text-5xl font-extrabold mb-12 text-center tracking-wide">Projects</h1>
+    <div id="Projects" className="py-16 px-6 bg-gradient-to-b from-gray-900 to-black text-white">
+      <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-cyan-400">
+        My Projects
+      </h1>
 
-      <div className="flex flex-wrap justify-center gap-8">
-        {projects.map(({ id, title, main, imgSrc, demoLink, sourceLink }, index) => (
-          <motion.div
-            key={id}
-            className="relative w-80 bg-[#111423] rounded-3xl shadow-2xl overflow-hidden flex flex-col"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.3 }}
-            whileHover={{ scale: 1.05, boxShadow: "0 15px 25px rgba(70, 86, 151, 0.5)" }}
+      <div className="max-w-6xl mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project) => (
+          <Link
+            key={project.id}
+            to={`/projects/${project.id}`} // এই লিংকটা Details পেজে নিয়ে যাবে
+            className="block"
           >
-            <div className="relative overflow-hidden h-48 md:h-56">
-              <motion.img
-                src={imgSrc}
-                alt={title}
-                className="w-full h-full object-cover transition-transform duration-500"
-                whileHover={{ scale: 1.1 }}
+            <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition hover:scale-105 hover:shadow-2xl cursor-pointer">
+              {/* ছবি */}
+              <img
+                src={project.imgSrc}
+                alt={project.title}
+                className="w-full h-48 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
-            </div>
 
-            <div className="p-6 flex flex-col flex-grow">
-              <h3 className="text-xl md:text-2xl font-semibold mb-2">{title}</h3>
-              <p className="text-gray-300 flex-grow">{main}</p>
+              {/* কন্টেন্ট */}
+              <div className="p-5">
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <p className="text-gray-300 text-sm mb-4">{project.main}</p>
 
-              <div className="mt-6 flex gap-4 justify-center md:justify-start flex-wrap">
-                {demoLink ? (
+                {/* টেক স্ট্যাক */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 text-xs bg-cyan-900 text-cyan-300 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* বাটন */}
+                <div className="flex gap-2">
                   <a
-                    href={demoLink}
+                    href={project.demoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-2 rounded-full bg-[#465697] font-semibold text-white hover:bg-[#334578] transition"
+                    className="flex-1 text-center bg-cyan-600 hover:bg-cyan-500 text-white py-2 rounded-lg text-sm font-medium"
+                    onClick={(e) => e.stopPropagation()} // লিংক ক্লিক হলে Details পেজে যাবে না
                   >
-                    Demo
+                    Live Demo
                   </a>
-                ) : (
-                  <span className="px-5 py-2 rounded-full bg-gray-600 font-semibold text-white cursor-not-allowed opacity-60 select-none">
-                    Demo N/A
-                  </span>
-                )}
 
-                <a
-                  href={sourceLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2 rounded-full bg-[#465697] font-semibold text-white hover:bg-[#334578] transition"
-                >
-                  Source Code
-                </a>
+                  <a
+                    href={project.sourceLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-lg text-sm font-medium"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Code
+                  </a>
 
-                {/* View More button navigates to detail page */}
-                <Link
-                  to={`/projects/${id}`}
-                  className="px-5 py-2 rounded-full bg-[#3b82f6] font-semibold text-white hover:bg-[#2563eb] transition"
-                >
-                  View More
-                </Link>
+                  {project.serverLink && (
+                    <a
+                      href={project.serverLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-white py-2 rounded-lg text-sm font-medium"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Server
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
-          </motion.div>
+          </Link>
         ))}
       </div>
     </div>
   );
 };
 
-export default ProjectCardPage;
+export default ProjectSection;

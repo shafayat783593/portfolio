@@ -15,7 +15,7 @@ const Banner = () => {
                 </p>
                 <button className="mt-5 md:mt-10 text-white py-2 px-6 text-sm md:text-lg hover:opacity-85 duration-300 hover:scale-105 font-semibold rounded-3xl bg-[#465697]">
                     <a
-                        href="https://drive.google.com/uc?export=download&id=1rfqPhqBICCIiXBmHqmuSObjU0tPsiNH9"
+                        href="https://drive.google.com/file/d/1TOfIAA8Psm5OkgmRJ91EwFNu7fy9vrn8/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

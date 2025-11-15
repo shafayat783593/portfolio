@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, Link } from "react-router";
-import { ArrowLeft, ExternalLink, Github, Calendar, Code, Rocket, Users, Zap, Shield, Globe, TrendingUp } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, Calendar, Code, Rocket, Users, Zap, TrendingUp, Target, Cpu, Database } from "lucide-react";
 
 import insurancePolicy from "../../assets/about/lifeincurance.png";
 import vibePassImg from "../../assets/about/vibepass.png";
@@ -41,7 +41,17 @@ const projects = [
             "Claim Filing System",
             "Admin Dashboard",
             "Role-based Access Control"
-        ]
+        ],
+        technologies: {
+            frontend: "React, Tailwind CSS, Context API",
+            backend: "Node.js, Express.js",
+            database: "Firebase, MongoDB",
+            authentication: "Firebase Auth",
+            deployment: "Firebase Hosting"
+        },
+        role: "Full Stack Developer",
+        duration: "3 months",
+        status: "Completed"
     },
     {
         id: "vibe-pass",
@@ -52,40 +62,7 @@ const projects = [
         sourceLink: "https://github.com/niloyahmadramjan/Vibe-Pass",
         serverLink: "https://github.com/niloyahmadramjan/vibe-pass-server",
         stack: "Next.js, React, Node.js, Express, MongoDB, Socket.io, Tailwind CSS, Stripe, SSLCommerz, Leaflet, NextAuth, JWT",
-        description: `VibePass is a modern, web-based movie and event ticketing platform designed to bring entertainment and convenience together under one digital roof. It enables users to seamlessly explore trending movies and live events, view showtimes, select preferred seats in real time, and purchase tickets securely online — all from a single, intuitive interface.
-
-The platform not only enhances the user experience but also empowers cinemas, event organizers, and admins with a powerful dashboard to manage event schedules, seating arrangements, ticket availability, and sales analytics in real time.
-
-Whether it’s catching the latest blockbuster, attending a music concert, or joining a local event, VibePass ensures a smooth, secure, and engaging ticketing experience for both audiences and organizers.`,
-
-        goal: `To create a smart, user-friendly, and secure digital ticketing ecosystem that simplifies how people discover, book, and manage movie and event experiences online. Eliminate long queues, manual booking, and paper tickets with real-time seat selection, instant payment, and personalized event discovery.`,
-
-        problemsSolved: [
-            "No reliable platform to discover and book movies/events transparently.",
-            "Long queues and manual booking processes.",
-            "No real-time seat visibility → double booking conflicts.",
-            "Disconnected payment systems causing delays.",
-            "Admins lack unified analytics and management tools.",
-            "Paper tickets → fraud, loss, and environmental waste.",
-            "No centralized booking history or refund system."
-        ],
-
-        howItSolves: `VibePass provides a centralized, real-time, paperless solution with:
-• Interactive seat maps with live locking (Socket.io)
-• Secure payments via Stripe & SSLCommerz
-• Instant QR e-tickets with email delivery
-• Role-based admin dashboard for full control
-• Real-time chat, notifications, and analytics
-• Location-based event discovery with maps`,
-
-        impact: [
-            "Builds trust with transparent, real-time booking",
-            "Reduces fraud with digital QR tickets",
-            "Boosts organizer efficiency with analytics",
-            "Promotes digital transformation in entertainment",
-            "Delivers seamless mobile-first experience"
-        ],
-
+        description: `VibePass is a modern, web-based movie and event ticketing platform designed to bring entertainment and convenience together under one digital roof. It enables users to seamlessly explore trending movies and live events, view showtimes, select preferred seats in real time, and purchase tickets securely online — all from a single, intuitive interface.`,
         features: [
             "Interactive Real-Time Seat Selection",
             "Live Chat Support with Organizers",
@@ -98,55 +75,40 @@ Whether it’s catching the latest blockbuster, attending a music concert, or jo
             "Automated Email & Push Notifications",
             "Loyalty Points & Referral System"
         ],
-
         myFeature: {
             title: "Real-Time Ticket Booking & Notification System",
-            description: `Users browse events, select seats, and complete secure payments. On confirmation, a digital QR e-ticket is generated and stored in the user profile. Booking status (Pending → Confirmed → Completed) updates live on both user and admin dashboards. Instant email and in-app notifications are sent on status change, payment success, or cancellation.`
+            description: `Users browse events, select seats, and complete secure payments. On confirmation, a digital QR e-ticket is generated and stored in the user profile. Booking status updates live on both user and admin dashboards with instant email and in-app notifications.`
         },
-
-        seatMapping: `Real-time seat locking using Socket.io prevents double bookings. Seats are instantly reserved on selection and auto-released on timeout or failed payment. Optimized React seat map ensures smooth performance on all devices.`,
-
         challenges: [
             "Implementing real-time seat booking with Socket.io to prevent double bookings.",
             "Designing a scalable, responsive seat-selection UI with live updates.",
             "Integrating secure payment gateways (Stripe, SSLCommerz) with fallback handling.",
-            "Building a role-based admin dashboard with real-time analytics.",
-            "Ensuring cross-device compatibility and performance under high traffic."
+            "Building a role-based admin dashboard with real-time analytics."
         ],
-
-        nonTechChallenges: [
-            "Team coordination across frontend, backend, and design modules → Solved with Jira & weekly sprints.",
-            "Maintaining UI consistency → Solved with Tailwind CSS design system.",
-            "Meeting tight deadlines → Solved with modular development and parallel deployment."
-        ],
-
         technologies: {
-            frontend: "Next.js (v15.5.3), React (v19.1), Tailwind CSS (v4.1), Framer Motion, React Hook Form, TanStack Query, Swiper, Recharts",
+            frontend: "Next.js (v15.5.3), React (v19.1), Tailwind CSS (v4.1), Framer Motion",
             backend: "Node.js, Express.js (v5), MongoDB (v6), Mongoose (v8), Socket.io",
-            auth: "NextAuth (v5), JWT, Google/GitHub OAuth, Nodemailer, bcrypt",
+            auth: "NextAuth (v5), JWT, Google/GitHub OAuth, Nodemailer",
             payments: "Stripe, SSLCommerz",
             maps: "Leaflet, React-Leaflet",
-            utils: "date-fns, uuid, qrcode.react, jspdf, node-cron, puppeteer"
+            utils: "date-fns, uuid, qrcode.react, jspdf"
         },
-
         usp: [
             "All-in-one: Discovery → Booking → Payment → Management",
             "Real-time everything: Seats, Chat, Notifications",
             "Secure & Paperless: QR + Digital Wallet",
             "Mobile-First + SSR for SEO & Speed",
-            "Admin Analytics & Sales Insights",
-            "Multi-gateway Payments + Local Support",
-            "Loyalty & Referral System"
+            "Admin Analytics & Sales Insights"
         ],
-
         improvements: [
             "Add AI-powered event recommendations",
             "Launch mobile app (React Native)",
             "Support multi-language & currency",
-            "Integrate AR seat preview",
-            "Add blockchain-based ticket verification",
-            "Enable event live streaming"
-        ]
+            "Integrate AR seat preview"
+        ],
+        role: "Full Stack Developer",
+        duration: "4 months",
+        status: "Completed"
     },
     {
         id: "tour-management",
@@ -162,8 +124,8 @@ Whether it’s catching the latest blockbuster, attending a music concert, or jo
         imgSrc: tourManagement,
         demoLink: "https://tour-management-c1ca2.web.app/",
         sourceLink: "https://github.com/shafayat783593/Tout-management-clint",
-        stack: "React, Tailwind CSS, Next.js",
-        description: "Tour Management is a comprehensive web application designed to streamline the planning, booking, and management of travel tours. It offers users an intuitive interface to browse available tours, view detailed itineraries, and book trips with ease. For tour operators, the platform provides tools to add, update, and manage tour packages efficiently.",
+        stack: "React, Tailwind , Mongodb ,Express ",
+        description: "Tour Management is a comprehensive web application designed to streamline the planning, booking, and management of travel tours. It offers users an intuitive interface to browse available tours, view detailed itineraries, and book trips with ease.",
         challenges: [
             "Implementing dynamic data fetching with React to optimize performance and SEO.",
             "Managing complex booking workflows and ensuring data consistency across users and tours.",
@@ -181,7 +143,17 @@ Whether it’s catching the latest blockbuster, attending a music concert, or jo
             "Customer Reviews",
             "Mobile Responsive",
             "Search & Filtering"
-        ]
+        ],
+        technologies: {
+            frontend: "React, Tailwind CSS, Express, Mongodb",
+            backend: "Firebase",
+            database: "Firebase Firestore",
+            authentication: "Firebase Auth",
+            deployment: "Firebase Hosting"
+        },
+        role: "Frontend Developer",
+        duration: "3 days",
+        status: "Completed"
     }
 ];
 
@@ -191,16 +163,16 @@ const ProjectDetail = () => {
 
     if (!project) {
         return (
-            <div className="min-h-screen bg-[#171d32] flex items-center justify-center p-8">
+            <div className="min-h-screen  flex items-center justify-center p-8">
                 <div className="text-center text-white">
                     <h2 className="text-4xl font-bold mb-4">Project Not Found</h2>
                     <p className="text-gray-300 mb-8">The project you're looking for doesn't exist.</p>
                     <Link
                         to="/"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl font-semibold transition-colors duration-300"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-600 hover:bg-cyan-500 rounded-xl font-semibold transition-colors duration-300"
                     >
                         <ArrowLeft size={20} />
-                        Back to Projects
+                        Back to Home
                     </Link>
                 </div>
             </div>
@@ -208,46 +180,65 @@ const ProjectDetail = () => {
     }
 
     return (
-        <div className="min-h-screen bg-[#171d32] text-white">
+        <div className="min-h-screen  text-white mt-20">
             {/* Header */}
-            <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div className="pt-16 pb-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <Link
                     to="/"
-                    className="inline-flex items-center gap-2 text-gray-200 hover:text-white mb-8 transition-colors duration-300 group"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800/50 hover:bg-gray-700/60 text-gray-300 hover:text-white rounded-lg border border-gray-700/50 hover:border-cyan-500/30 transition-all duration-300 group shadow-lg hover:shadow-cyan-500/10 mb-6"
                 >
-                    <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform duration-300" />
-                    Back to Projects
+                    <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform duration-300" />
+                    <span className="font-medium">Back to Projects</span>
                 </Link>
 
-                <div className="grid lg:grid-cols-2 gap-12 items-start">
+                <div className="grid lg:grid-cols-2 gap-6 items-start">
                     {/* Project Image */}
-                    <div className="space-y-6">
-                        <div className="rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10">
+                    <div className="space-y-4">
+                        <div className="rounded-xl overflow-hidden shadow-lg border border-gray-700/50">
                             <img
                                 src={project.imgSrc}
                                 alt={project.title}
-                                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-500"
+                                className="w-full h-60 object-cover"
                             />
                         </div>
 
+                        {/* Quick Stats */}
+                        <div className="grid grid-cols-3 gap-3 py-8">
+                            <div className="text-center p-3 bg-gray-800/50 rounded-lg border border-gray-700/50">
+                                <Target className="w-5 h-5 text-cyan-400 mx-auto mb-1" />
+                                <p className="text-xs text-gray-300">Role</p>
+                                <p className="text-sm font-semibold text-white">{project.role}</p>
+                            </div>
+                            <div className="text-center p-3 bg-gray-800/50 rounded-lg border border-gray-700/50">
+                                <Calendar className="w-5 h-5 text-green-400 mx-auto mb-1" />
+                                <p className="text-xs text-gray-300">Duration</p>
+                                <p className="text-sm font-semibold text-white">{project.duration}</p>
+                            </div>
+                            <div className="text-center p-3 bg-gray-800/50 rounded-lg border border-gray-700/50">
+                                <Cpu className="w-5 h-5 text-purple-400 mx-auto mb-1" />
+                                <p className="text-xs text-gray-300">Status</p>
+                                <p className="text-sm font-semibold text-white">{project.status}</p>
+                            </div>
+                        </div>
+
                         {/* Action Buttons */}
-                        <div className="flex flex-wrap gap-4">
+                        <div className="flex py-8 gap-2">
                             <a
                                 href={project.demoLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-3 px-6 py-3 bg-white text-[#465697] rounded-xl font-semibold hover:bg-gray-100 hover:shadow-lg transition-all duration-300 flex-1 justify-center"
+                                className="flex items-center gap-2 px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-semibold transition-all duration-300 justify-center text-sm"
                             >
-                                <ExternalLink size={20} />
+                                <ExternalLink size={18} />
                                 Live Demo
                             </a>
                             <a
                                 href={project.sourceLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-3 px-6 py-3 bg-white/10 text-white rounded-xl font-semibold hover:bg-white/20 border border-white/20 transition-all duration-300 flex-1 justify-center"
+                                className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-semibold transition-all duration-300 justify-center text-sm"
                             >
-                                <Github size={20} />
+                                <Github size={18} />
                                 Client Code
                             </a>
                             {project.serverLink && (
@@ -255,9 +246,9 @@ const ProjectDetail = () => {
                                     href={project.serverLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-3 px-6 py-3 bg-white/10 text-white rounded-xl font-semibold hover:bg-white/20 border border-white/20 transition-all duration-300 flex-1 justify-center"
+                                    className="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold transition-all duration-300 justify-center text-sm"
                                 >
-                                    <Github size={20} />
+                                    <Database size={18} />
                                     Server Code
                                 </a>
                             )}
@@ -265,27 +256,27 @@ const ProjectDetail = () => {
                     </div>
 
                     {/* Project Info */}
-                    <div className="space-y-8">
+                    <div className="space-y-4">
                         <div>
-                            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+                            <h1 className="text-2xl lg:text-3xl font-bold text-white mb-3">
                                 {project.title}
                             </h1>
-                            <p className="text-xl text-gray-200 leading-relaxed">
+                            <p className="text-gray-300 leading-relaxed text-sm">
                                 {project.description}
                             </p>
                         </div>
 
                         {/* Tech Stack */}
-                        <div>
-                            <h3 className="flex items-center gap-2 text-2xl font-semibold text-white mb-4">
-                                <Code className="text-blue-300" size={24} />
+                        <div className="bg-gray-800/30 rounded-lg p-4 border border-gray-700/50">
+                            <h3 className="flex items-center gap-2 text-lg font-semibold text-white mb-3">
+                                <Code className="text-cyan-400" size={18} />
                                 Technology Stack
                             </h3>
-                            <div className="flex flex-wrap gap-3">
+                            <div className="flex flex-wrap gap-1">
                                 {project.stack.split(', ').map((tech, index) => (
                                     <span
                                         key={index}
-                                        className="px-4 py-2 bg-white/20 text-white rounded-full border border-white/30 text-sm font-medium"
+                                        className="px-2 py-1 bg-cyan-900/30 text-cyan-300 rounded border border-cyan-700/30 text-xs font-medium"
                                     >
                                         {tech}
                                     </span>
@@ -294,19 +285,19 @@ const ProjectDetail = () => {
                         </div>
 
                         {/* Key Features */}
-                        <div>
-                            <h3 className="flex items-center gap-2 text-2xl font-semibold text-white mb-4">
-                                <Rocket className="text-green-300" size={24} />
+                        <div className="bg-gray-800/30 rounded-lg p-4 border border-gray-700/50">
+                            <h3 className="flex items-center gap-2 text-lg font-semibold text-white mb-3">
+                                <Rocket className="text-green-400" size={18} />
                                 Key Features
                             </h3>
-                            <div className="grid sm:grid-cols-2 gap-3">
+                            <div className="grid gap-1">
                                 {project.features?.map((feature, index) => (
                                     <div
                                         key={index}
-                                        className="flex items-center gap-3 p-3 bg-white/10 rounded-xl border border-white/20"
+                                        className="flex items-center gap-2 p-1 text-gray-300"
                                     >
-                                        <div className="w-2 h-2 bg-green-300 rounded-full"></div>
-                                        <span className="text-gray-200">{feature}</span>
+                                        <div className="w-1.5 h-1.5 bg-green-400 rounded-full flex-shrink-0"></div>
+                                        <span className="text-xs">{feature}</span>
                                     </div>
                                 ))}
                             </div>
@@ -316,27 +307,27 @@ const ProjectDetail = () => {
             </div>
 
             {/* Detailed Sections */}
-            <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-20">
-                <div className="grid lg:grid-cols-2 gap-8">
+            <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-12">
+                <div className="grid lg:grid-cols-2 gap-4">
                     {/* Left Column */}
-                    <div className="space-y-6">
+                    <div className="space-y-4">
                         {/* Project Overview */}
-                        <div className="bg-white/10 rounded-2xl p-6 border border-white/20">
-                            <h3 className="flex items-center gap-2 text-2xl font-semibold text-white mb-4">
-                                <Users className="text-cyan-300" size={24} />
+                        <div className="bg-gray-800/30 rounded-lg p-4 border border-gray-700/50">
+                            <h3 className="flex items-center gap-2 text-lg font-semibold text-white mb-3">
+                                <Users className="text-blue-400" size={18} />
                                 Project Overview
                             </h3>
-                            <div className="space-y-4 text-gray-200 leading-relaxed">
+                            <div className="space-y-2 text-gray-300 text-xs leading-relaxed">
                                 {Array.isArray(project.main)
                                     ? project.main.map((paragraph, index) => (
                                         <p key={index} className="flex items-start gap-2">
-                                            <span className="text-cyan-300 mt-1">•</span>
+                                            <span className="text-blue-400 mt-1 text-xs">▪</span>
                                             {paragraph}
                                         </p>
                                     ))
                                     : project.main.split('.').filter(Boolean).map((paragraph, index) => (
                                         <p key={index} className="flex items-start gap-2">
-                                            <span className="text-cyan-300 mt-1">•</span>
+                                            <span className="text-blue-400 mt-1 text-xs">▪</span>
                                             {paragraph.trim()}
                                         </p>
                                     ))}
@@ -344,135 +335,96 @@ const ProjectDetail = () => {
                         </div>
 
                         {/* Challenges */}
-                        <div className="bg-white/10 rounded-2xl p-6 border border-white/20">
-                            <h3 className="text-2xl font-semibold text-white mb-4">Challenges Faced</h3>
-                            <div className="space-y-3 text-gray-200">
-                                {Array.isArray(project.challenges)
-                                    ? project.challenges.map((challenge, index) => (
-                                        <p key={index} className="leading-relaxed flex items-start gap-2">
-                                            <span className="text-red-400 mt-1">→</span>
-                                            {challenge}
-                                        </p>
-                                    ))
-                                    : project.challenges.split('.').filter(Boolean).map((challenge, index) => (
-                                        <p key={index} className="leading-relaxed">
-                                            {challenge.trim()}
-                                        </p>
-                                    ))}
+                        <div className="bg-gray-800/30 rounded-lg p-4 border border-gray-700/50">
+                            <h3 className="text-lg font-semibold text-white mb-3">Challenges & Solutions</h3>
+                            <div className="space-y-2 text-gray-300 text-xs">
+                                {project.challenges.map((challenge, index) => (
+                                    <div key={index} className="flex items-start gap-2 p-2 bg-red-400/10 rounded border border-red-400/20">
+                                        <span className="text-red-400 mt-0.5 text-xs">→</span>
+                                        <span>{challenge}</span>
+                                    </div>
+                                ))}
                             </div>
                         </div>
-
-                        {/* VibePass Only: My Feature */}
-                        {project.id === "vibe-pass" && project.myFeature && (
-                            <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-2xl p-6 border border-purple-500/30">
-                                <h3 className="flex items-center gap-2 text-2xl font-semibold text-white mb-4">
-                                    <Zap className="text-yellow-300" size={24} />
-                                    My Contribution: {project.myFeature.title}
-                                </h3>
-                                <p className="text-gray-200 leading-relaxed">
-                                    {project.myFeature.description}
-                                </p>
-                            </div>
-                        )}
                     </div>
 
                     {/* Right Column */}
-                    <div className="space-y-6">
+                    <div className="space-y-4">
                         {/* Future Improvements */}
-                        <div className="bg-white/10 rounded-2xl p-6 border border-white/20">
-                            <h3 className="flex items-center gap-2 text-2xl font-semibold text-white mb-4">
-                                <Calendar className="text-yellow-300" size={24} />
-                                Future Plans & Improvements
+                        <div className="bg-gray-800/30 rounded-lg p-4 border border-gray-700/50">
+                            <h3 className="flex items-center gap-2 text-lg font-semibold text-white mb-3">
+                                <Calendar className="text-yellow-400" size={18} />
+                                Future Enhancements
                             </h3>
-                            <div className="space-y-4">
-                                {Array.isArray(project.improvements)
-                                    ? project.improvements.map((improvement, index) => (
-                                        <div
-                                            key={index}
-                                            className="flex items-start gap-3 p-3 bg-yellow-400/20 rounded-xl border border-yellow-400/30"
-                                        >
-                                            <div className="w-2 h-2 bg-yellow-300 rounded-full mt-2"></div>
-                                            <span className="text-gray-200 leading-relaxed">
-                                                {improvement}
-                                            </span>
-                                        </div>
-                                    ))
-                                    : project.improvements.split('.').filter(Boolean).map((improvement, index) => (
-                                        <div
-                                            key={index}
-                                            className="flex items-start gap-3 p-3 bg-yellow-400/20 rounded-xl border border-yellow-400/30"
-                                        >
-                                            <div className="w-2 h-2 bg-yellow-300 rounded-full mt-2"></div>
-                                            <span className="text-gray-200 leading-relaxed">
-                                                {improvement.trim()}
-                                            </span>
-                                        </div>
-                                    ))}
-                            </div>
-                        </div>
-
-                        {/* VibePass Only: USP */}
-                        {project.id === "vibe-pass" && project.usp && (
-                            <div className="bg-gradient-to-br from-green-900/50 to-teal-900/50 rounded-2xl p-6 border border-green-500/30">
-                                <h3 className="flex items-center gap-2 text-2xl font-semibold text-white mb-4">
-                                    <TrendingUp className="text-green-300" size={24} />
-                                    Why VibePass Stands Out (USP)
-                                </h3>
-                                <ul className="space-y-2 text-gray-200">
-                                    {project.usp.map((point, i) => (
-                                        <li key={i} className="flex items-start gap-2">
-                                            <span className="text-green-400 mt-1">✔</span>
-                                            {point}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-
-                        {/* Project Links */}
-                        <div className="bg-white/10 rounded-2xl p-6 border border-white/20">
-                            <h3 className="text-2xl font-semibold text-white mb-4">Project Links</h3>
-                            <div className="space-y-4">
-                                <a
-                                    href={project.demoLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-3 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors duration-300 group border border-white/20"
-                                >
-                                    <ExternalLink className="text-blue-300" size={20} />
-                                    <div>
-                                        <p className="text-white font-semibold">Live Demo</p>
-                                        <p className="text-gray-300 text-sm truncate">{project.demoLink}</p>
-                                    </div>
-                                </a>
-                                <a
-                                    href={project.sourceLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-3 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors duration-300 group border border-white/20"
-                                >
-                                    <Github className="text-gray-300" size={20} />
-                                    <div>
-                                        <p className="text-white font-semibold">Client Code</p>
-                                        <p className="text-gray-300 text-sm truncate">{project.sourceLink}</p>
-                                    </div>
-                                </a>
-                                {project.serverLink && (
-                                    <a
-                                        href={project.serverLink}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-3 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors duration-300 group border border-white/20"
+                            <div className="space-y-1">
+                                {project.improvements.map((improvement, index) => (
+                                    <div
+                                        key={index}
+                                        className="flex items-start gap-2 p-1 text-gray-300 text-xs"
                                     >
-                                        <Github className="text-gray-300" size={20} />
-                                        <div>
-                                            <p className="text-white font-semibold">Server Code</p>
-                                            <p className="text-gray-300 text-sm truncate">{project.serverLink}</p>
-                                        </div>
-                                    </a>
-                                )}
+                                        <span className="text-yellow-400 mt-0.5 text-xs">★</span>
+                                        <span>{improvement}</span>
+                                    </div>
+                                ))}
                             </div>
                         </div>
+
+                        {/* Technology Breakdown */}
+                        <div className="bg-gray-800/30 rounded-lg p-4 border border-gray-700/50">
+                            <h3 className="flex items-center gap-2 text-lg font-semibold text-white mb-3">
+                                <Cpu className="text-purple-400" size={18} />
+                                Technology Details
+                            </h3>
+                            <div className="space-y-2 text-xs">
+                                {Object.entries(project.technologies || {}).map(([category, tech]) => (
+                                    <div key={category} className="flex items-start gap-2">
+                                        <span className="text-purple-300 font-medium capitalize min-w-16 text-xs">
+                                            {category}:
+                                        </span>
+                                        <span className="text-gray-300 text-xs">{tech}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* VibePass Special Sections */}
+                        {project.id === "vibe-pass" && (
+                            <>
+                                {/* USP */}
+                                <div className="bg-gradient-to-br from-green-900/20 to-teal-900/20 rounded-lg p-4 border border-green-500/30">
+                                    <h3 className="flex items-center gap-2 text-lg font-semibold text-white mb-3">
+                                        <TrendingUp className="text-green-400" size={18} />
+                                        Unique Selling Points
+                                    </h3>
+                                    <div className="space-y-1 text-xs">
+                                        {project.usp.map((point, i) => (
+                                            <div key={i} className="flex items-start gap-2 text-gray-300">
+                                                <span className="text-green-400 mt-0.5 text-xs">✔</span>
+                                                <span>{point}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* My Contribution */}
+                                {project.myFeature && (
+                                    <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-lg p-4 border border-purple-500/30">
+                                        <h3 className="flex items-center gap-2 text-lg font-semibold text-white mb-3">
+                                            <Zap className="text-yellow-400" size={18} />
+                                            My Key Contribution
+                                        </h3>
+                                        <div className="space-y-1">
+                                            <h4 className="font-semibold text-yellow-300 text-xs">
+                                                {project.myFeature.title}
+                                            </h4>
+                                            <p className="text-gray-300 text-xs leading-relaxed">
+                                                {project.myFeature.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                )}
+                            </>
+                        )}
                     </div>
                 </div>
             </div>

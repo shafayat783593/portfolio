@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const colors = [
-  "from-pink-500 via-red-500 to-yellow-500",
-  "from-purple-500 via-indigo-500 to-blue-500",
-  "from-green-400 via-teal-400 to-cyan-400",
-  "from-pink-600 via-purple-600 to-indigo-600",
+  "from-cyan-400 via-blue-500 to-purple-600",
+  "from-green-400 via-teal-500 to-cyan-600",
+  "from-pink-400 via-rose-500 to-red-600",
+  "from-yellow-400 via-orange-500 to-red-600",
+  "from-purple-400 via-pink-500 to-rose-600",
 ];
 
 const TextChange = () => {
   const texts = [
-    "Hi, I'm Md Shafayat hosan",
-    "I build interactive websites",
-    "I am a frontend developer",
-    "Welcome to my portfolio",
+    "Hi, I'm Md Shafayat Hossain ",
+    "I Build Interactive Websites ",
+    "Frontend Developer ",
+    "Passionate Coder ",
+    "Creative Designer "
   ];
 
   const [currentText, setCurrentText] = useState("");
@@ -27,7 +30,6 @@ const TextChange = () => {
 
     const timeout = setTimeout(() => {
       if (!isDeleting) {
-        // Typing forward
         setCurrentText(texts[index].substring(0, charIndex + 1));
         setCharIndex(charIndex + 1);
 
@@ -36,10 +38,9 @@ const TextChange = () => {
           setTimeout(() => {
             setIsDeleting(true);
             setPause(false);
-          }, 1500);
+          }, 2000);
         }
       } else {
-        // Deleting backward
         setCurrentText(texts[index].substring(0, charIndex - 1));
         setCharIndex(charIndex - 1);
 
@@ -49,27 +50,27 @@ const TextChange = () => {
           setColorIndex((colorIndex + 1) % colors.length);
         }
       }
-    }, isDeleting ? 50 : 100);
+    }, isDeleting ? 40 : 80);
 
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, index, pause, texts, colorIndex]);
 
   return (
-    <h1
-      className={`text-transparent bg-clip-text bg-gradient-to-r ${colors[colorIndex]} font-extrabold text-3xl md:text-5xl tracking-tight select-none`}
+    <motion.div
+      className="relative"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
     >
-      {currentText}
-      <span className="animate-blink">|</span>
-
-      <style>{`
-        .animate-blink {
-          animation: blink 1.2s step-start infinite;
-        }
-        @keyframes blink {
-          50% { opacity: 0 }
-        }
-      `}</style>
-    </h1>
+      <h1 className={`text-transparent bg-clip-text bg-gradient-to-r ${colors[colorIndex]} font-black text-3xl md:text-4xl lg:text-5xl tracking-tight select-none leading-tight`}>
+        {currentText}
+        <motion.span
+          className="ml-1 inline-block w-1 h-16 bg-current"
+          animate={{ opacity: [1, 0, 1] }}
+          transition={{ duration: 1, repeat: Infinity }}
+        />
+      </h1>
+    </motion.div>
   );
 };
 
